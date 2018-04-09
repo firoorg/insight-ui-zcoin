@@ -39,6 +39,9 @@
         "front-end"
     ],
     "bitcoreNode": "bitcore-node-zcoin",
+    "insightConfig": {
+        "routePrefix": ""
+    },
     "dependencies": {
     },
     "devDependencies": {
