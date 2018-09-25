@@ -16,7 +16,7 @@ var InsightUI = function (options) {
     } else {
         this.routePrefix = 'insight';
     }
-    this.routePrefix = '';
+this.routePrefix = '';
 };
 
 InsightUI.dependencies = ['insight-api-zcoin'];
