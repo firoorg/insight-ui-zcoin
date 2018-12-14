@@ -10,13 +10,25 @@ angular.module('insight.system').controller('HeaderController',
       symbol: 'ZCOIN'
     };
 
-    $scope.menu = [{
-      'title': 'Blocks',
-      'link': 'blocks'
-    }, {
-      'title': 'Status',
-      'link': 'status'
-    }];
+    $scope.menu = [
+      {
+        'title': 'Views',
+        'items': [
+          {
+            'title': 'Blocks',
+            'link': 'blocks'
+          },
+          {
+            'title': 'Rich list',
+            'link': 'richlist'
+          }
+        ]
+      },
+      {
+        'title': 'Status',
+        'link': 'status'
+      }
+    ];
 
     $scope.openScannerModal = function() {
       var modalInstance = $modal.open({

@@ -1,0 +1,21 @@
+<section>
+  <div class="page-header">
+    <h1 translate>Rich list</h1>
+  </div>
+  <table class="table" data-ng-controller="RichListController">
+    <thead>
+      <tr>
+        <th translate>Rank</th>
+        <th translate>Address</th>
+        <th translate>Balance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-ng-repeat="item in items">
+        <td>#{{item.rank}}</td>
+        <td><a href="address/{{item.addr}}">{{item.addr}}</a></td>
+        <td>{{item.balance / 100000000}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

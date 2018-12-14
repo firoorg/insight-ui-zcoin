@@ -15,8 +15,16 @@
     </div>
     <div class="navbar-collapse collapse" collapse="$root.isCollapsed">
       <ul class="nav navbar-nav">
-        <li data-ng-repeat="item in menu" ui-route="{{item.link}}" data-ng-class="{active: $uiRoute}">
-          <a href="{{item.link}}">{{item.title|translate}}</a>
+        <li data-ng-repeat="item in menu" ui-route="{{item.link}}" data-ng-class="{active: $uiRoute, dropdown: item.items !== undefined}">
+          <!-- link -->
+          <a data-ng-if="item.items === undefined" href="{{item.link}}">{{item.title|translate}}</a>
+          <!-- drop down -->
+          <a data-ng-if="item.items !== undefined" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">{{item.title|translate}} <span class="caret"></span></a>
+          <ul data-ng-if="item.items !== undefined" class="dropdown-menu">
+            <li data-ng-repeat="child in item.items" ui-route="{{child.link}}" data-ng-class="{active: $uiRoute}">
+              <a href="{{child.link}}">{{child.title|translate}}</a>
+            </li>
+          </ul>
         </li>
       </ul>
       <span class="hidden-xs navbar-form navbar-left" data-ng-include src="'views/includes/search.html'"></span>
