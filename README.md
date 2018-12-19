@@ -1,10 +1,10 @@
 # Insight UI Zcoin
 
-A Zcoin blockchain explorer web application service for [Bitcore Node Zcoin](https://github.com/zcoinpay/bitcore-node-zcoin) using [Insight API Zcoin](https://github.com/zcoinpay/insight-api-zcoin).
+A Zcoin blockchain explorer web application service for [Bitcore Node Zcoin](https://github.com/zcoinofficial/bitcore-node-zcoin) using [Insight API Zcoin](https://github.com/zcoinofficial/insight-api-zcoin).
 
 ## Quick Start
 
-Please see the guide at [https://bitcore.io/guides/full-node](https://bitcore.io/guides/full-node) for information about getting a block explorer running. This is only the front-end component of the block explorer, and is packaged together with all of the necessary components in [Bitcore](https://github.com/zcoinpay/bitcore-zcoin).
+Please see the guide at [https://bitcore.io/guides/full-node](https://bitcore.io/guides/full-node) for information about getting a block explorer running. This is only the front-end component of the block explorer, and is packaged together with all of the necessary components in [Bitcore](https://github.com/zcoinofficial/bitcore-node-zcoin).
 
 ## Getting Started
 
@@ -70,11 +70,11 @@ compile***.
 
 ## Note
 
-For more details about the [Insight API](https://github.com/zcoinpay/insight-api-zcoin) configuration and end-points, go to [Insight API GitHub repository](https://github.com/zcoinpay/insight-api-zcoin).
+For more details about the [Insight API](https://github.com/zcoinofficial/insight-api-zcoin) configuration and end-points, go to [Insight API GitHub repository](https://github.com/zcoinofficial/insight-api-zcoin).
 
 ## Contribute
 
-Contributions and suggestions are welcomed at the [Insight UI Zcoin GitHub repository](https://github.com/zcoinpay/insight-ui-zcoin).
+Contributions and suggestions are welcomed at the [Insight UI Zcoin GitHub repository](https://github.com/zcoinofficial/insight-ui-zcoin).
 
 
 ## License
