@@ -12,21 +12,21 @@ angular.module('insight.system').controller('HeaderController',
 
     $scope.menu = [
       {
-        'title': 'Views',
+        'title': 'Blocks',
+        'link': 'blocks'
+      },
+      {
+        'title': 'More',
         'items': [
-          {
-            'title': 'Blocks',
-            'link': 'blocks'
-          },
           {
             'title': 'Rich list',
             'link': 'richlist'
+          },
+          {
+            'title': 'Status',
+            'link': 'status'
           }
         ]
-      },
-      {
-        'title': 'Status',
-        'link': 'status'
       }
     ];
 
