@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('insight.richlist').controller('RichListController', function ($scope, RichList) {
+angular.module('insight.richlist')
+.controller('RichListController', function ($scope, RichList) {
   $scope.items = [];
 
   RichList.query({}, function (addrs) {
@@ -12,4 +13,13 @@ angular.module('insight.richlist').controller('RichListController', function ($s
       });
     }
   });
+})
+.controller('RealSupplyController', function($scope, $http) {
+  $scope.realSupply = 'Not available';
+  $http.get("/insight-api-zcoin/zerocoin/getrealsupply")
+    .then(function(response) {
+      $scope.realSupply = response.data.total.toFixed(2).replace(/(\B)(?=(\d{3})+(?!\d))/g, '$1 ');
+      $scope.realSupplyRaw = response.data.total;
+    });
 });
+;
