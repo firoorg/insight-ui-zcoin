@@ -19,8 +19,8 @@
           <!-- link -->
           <a data-ng-if="item.items === undefined" href="{{item.link}}">{{item.title|translate}}</a>
           <!-- drop down -->
-          <a data-ng-if="item.items !== undefined" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">{{item.title|translate}} <span class="caret"></span></a>
-          <ul data-ng-if="item.items !== undefined" class="dropdown-menu">
+          <a data-ng-if="item.items !== undefined" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" ondblclick="window.location.href='status'">{{item.title|translate}} <span class="caret"></span></a>
+          <ul data-ng-if="item.items !== undefined" class="dropdown-menu more-menu">
             <li data-ng-repeat="child in item.items" ui-route="{{child.link}}" data-ng-class="{active: $uiRoute}">
               <a href="{{child.link}}">{{child.title|translate}}</a>
             </li>
