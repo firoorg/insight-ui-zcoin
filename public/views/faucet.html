@@ -1,0 +1,44 @@
+<section>
+  <div class="page-header">
+    <h1 translate>Faucet</h1>
+  </div>
+  <div id="status" class="row">
+    <div class="col-xs-12 col-md-8">
+      <h2 translate>Send Zcoin</h2>
+      <table class="table col-gray" data-ng-controller="FaucetController">
+        <tbody>
+          <tr>
+            <td>
+              <span>{{canSend ? 'Please provide the address and hit enter' : 'Please wait'}}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <form id="address-form"  data-ng-submit="sendto(sendtoaddr)">
+                <input id="sendto" type="text" class="form-control" data-ng-class="{'loading': loading}" placeholder="{{'Enter the receiving address'|translate}}" focus="true" data-ng-model="sendtoaddr">
+                <span class="col-xs-12 col-md-4 col-gray small" data-ng-bind="laststatus"></span>
+              </form>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div> <!-- END OF COL-8 -->
+
+    <div class="col-xs-12 col-md-4 col-gray">
+      <h2 translate>Faucet info</h2>
+      <table class="table" data-ng-controller="FaucetController" data-ng-init="getinfo()">
+        <tbody>
+        <tr>
+          <td>Balance</td>
+          <td>{{info['balance']}}</td>
+        </tr>
+        <tr>
+          <td>Tx count</td>
+          <td>{{info['txcount']}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div> <!-- END OF COL-GRAY -->
+  </div>
+
+</section>
