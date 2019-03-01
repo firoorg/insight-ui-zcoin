@@ -29,6 +29,10 @@ angular.module('insight.system').controller('HeaderController',
           {
             'title': 'Sigma',
             'link': 'sigmastatus'
+	  },
+	  {
+            'title': 'Faucet',
+            'link': 'faucet'
           }
         ]
       }
