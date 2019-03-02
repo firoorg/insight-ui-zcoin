@@ -9,15 +9,26 @@
         <tbody>
           <tr>
             <td>
-              <span>{{canSend ? 'Please provide the address and hit enter' : 'Please wait'}}</span>
+              <span>{{canSend ? 'Please provide and address and hit enter' : 'Please wait'}}</span>
             </td>
           </tr>
           <tr>
             <td>
               <form id="address-form"  data-ng-submit="sendto(sendtoaddr)">
                 <input id="sendto" type="text" class="form-control" data-ng-class="{'loading': loading}" placeholder="{{'Enter the receiving address'|translate}}" focus="true" data-ng-model="sendtoaddr">
-                <span class="col-xs-12 col-md-4 col-gray small" data-ng-bind="laststatus"></span>
               </form>
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <div data-ng-switch on="laststatus">
+                  <div ng-switch-when="txid">
+                    The tx needs some time to propagate: <a href="tx/{{txid}}">{{txid}}</a>
+                  </div>
+                  <div ng-switch-default>
+                    <span class="col-gray small" data-ng-bind="laststatus"></span>
+                  </div>
+                </div>
             </td>
           </tr>
         </tbody>

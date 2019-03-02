@@ -6,6 +6,7 @@ angular.module('insight.faucet').controller('FaucetController',
   $scope.global = Global;
   $scope.canSend = false;
   $scope.laststatus = '';
+  $scope.txid = '';
   $timeout(function() {
     $scope.canSend = true;
   }, 2000);
@@ -19,8 +20,12 @@ angular.module('insight.faucet').controller('FaucetController',
       SendTo.get({
         sendToAddr: sendToAddr
       }, function(result) {
-        console.log('scope.sendto ' + result.result);
         $scope.laststatus = result.result;
+        $scope.txid = '';
+        if(result.result.substring(0,9) == 'success: ') {
+          $scope.laststatus = 'txid';
+          $scope.txid = result.result.substring(9);
+        }
       });
     }
   };
