@@ -74,7 +74,7 @@ For more details about the [Insight API](https://github.com/zcoinpay/insight-api
 
 ## Contribute
 
-Contributions and suggestions are welcomed at the [Insight UI Zcoin GitHub repository](https://github.com/zcoinpay/insight-ui-zcoin).
+Contributions and suggestions are welcomed at the [Insight UI Zcoin GitHub repository](https://github.com/zcoinofficial/insight-ui-zcoin).
 
 
 ## License
