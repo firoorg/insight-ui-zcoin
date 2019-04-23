@@ -5,7 +5,7 @@
   <div id="status" class="row">
     <div class="col-xs-12 col-md-8">
       <h2 translate>Send Zcoin</h2>
-      <table class="table col-gray" data-ng-controller="FaucetController">
+      <table class="table col-gray" data-ng-controller="FaucetController" data-ng-init="getinfo()">
         <tbody>
           <tr>
             <td>
@@ -33,6 +33,20 @@
           </tr>
         </tbody>
       </table>
+      <h2 translate>Return info</h2>
+      <table class="table col-gray" data-ng-controller="FaucetController" data-ng-init="getinfo()">
+        <tbody>
+        <tr>
+          <td>
+            When finished with your development please return the coins to the faucet address:
+          </td>
+          <td>
+            {{info['address']}}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
     </div> <!-- END OF COL-8 -->
 
     <div class="col-xs-12 col-md-4 col-gray">
