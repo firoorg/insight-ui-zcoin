@@ -22,6 +22,7 @@ function($scope, $rootScope, $routeParams, $location, Global, Transaction, Trans
     for(var i=0; i < l; i++) {
 
       var notAddr = false;
+      var isSigma = false;
       // non standard input
       if (items[i].scriptSig && !items[i].addr) {
         items[i].addr = 'Unparsed address [' + u++ + ']';
@@ -34,6 +35,11 @@ function($scope, $rootScope, $routeParams, $location, Global, Transaction, Trans
         items[i].scriptPubKey.addresses = ['Unparsed address [' + u++ + ']'];
         items[i].notAddr = true;
         notAddr = true;
+      }
+
+      if (items[i].addr && (items[i].addr.startsWith('Sigma') || items[i].addr.startsWith('Zero'))) {
+        items[i].isSigma = true;
+        isSigma = true;
       }
 
       // multiple addr at output
@@ -60,6 +66,7 @@ function($scope, $rootScope, $routeParams, $location, Global, Transaction, Trans
       tmp[addr].valueSat += Math.round(items[i].value * COIN);
       tmp[addr].items.push(items[i]);
       tmp[addr].notAddr = notAddr;
+      tmp[addr].isSigma = isSigma;
 
       if (items[i].unconfirmedInput)
         tmp[addr].unconfirmedInput = true;
