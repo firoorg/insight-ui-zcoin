@@ -25,6 +25,10 @@ angular.module('insight.system').controller('HeaderController',
           {
             'title': 'Status',
             'link': 'status'
+          },
+          {
+            'title': 'Sigma',
+            'link': 'sigmastatus'
           }
         ]
       }

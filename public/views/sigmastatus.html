@@ -1,0 +1,29 @@
+<div></div>
+<section>
+    <div class="page-header">
+        <h1 translate>Sigma Status</h1>
+    </div>
+    <div id="status" class="row">
+        <div class="col-xs-12 col-md-8">
+            <h2 translate>Denomination breakdown</h2>
+            <table class="table" data-ng-controller="SigmaStatusController">
+                <thead>
+                <tr>
+                    <th translate>Denom</th>
+                    <th translate>Mint</th>
+                    <th translate>Spent</th>
+                    <th translate>Available</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr data-ng-repeat="item in items">
+                    <td>{{item.denomination}}</td>
+                    <td>{{$root.currency.getConvertion(item.mint) || item.mint}}</td>
+                    <td>{{$root.currency.getConvertion(item.spent) || item.spent}}</td>
+                    <td>{{$root.currency.getConvertion(item.available) || item.available}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div> <!-- END OF COL-8 -->
+    </div>
+</section>

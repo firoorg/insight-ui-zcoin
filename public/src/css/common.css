@@ -4902,6 +4902,15 @@ li:nth-child(2) a.ng-binding:before {
     margin: -6px 4px -6px 4px;
 }
 
+.dropdown-menu.more-menu>li:nth-child(3) a.ng-binding:before {
+    content: "";
+    background: url(../img/sigma_icon_nav.svg) no-repeat;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -6px 4px -6px 4px;
+}
+
 .navbar-default .navbar-toggle {
     border-color: #ddd;
 }

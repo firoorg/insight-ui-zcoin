@@ -23,7 +23,8 @@ angular.module('insight',[
   'insight.connection',
   'insight.currency',
   'insight.messages',
-  'insight.richlist'
+  'insight.richlist',
+  'insight.sigmastatus'
 ]);
 
 angular.module('insight.system', []);
@@ -37,3 +38,4 @@ angular.module('insight.connection', []);
 angular.module('insight.currency', []);
 angular.module('insight.messages', []);
 angular.module('insight.richlist', []);
+angular.module('insight.sigmastatus', []);
