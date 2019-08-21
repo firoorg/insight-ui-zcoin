@@ -8,9 +8,9 @@ angular.module('insight.sigmastatus')
       for (var i = 0; i < values.length; i++) {
         $scope.items.push({
           denomination: values[i].denomination / 1e+8,
-          mint: values[i].mint / 1e+8,
-          spent: values[i].spent / 1e+8,
-          available: (values[i].mint - values[i].spent) / 1e+8
+          mint: values[i].mint,
+          spent: values[i].spent,
+          available: (values[i].mint - values[i].spent)
         });
       }
     });
