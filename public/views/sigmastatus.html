@@ -18,9 +18,9 @@
                 <tbody>
                 <tr data-ng-repeat="item in items">
                     <td>{{item.denomination}}</td>
-                    <td>{{item.mint.toLocaleString()}}</td>
-                    <td>{{item.spent.toLocaleString()}}</td>
-                    <td>{{item.available.toLocaleString()}}</td>
+                    <td>{{(item.mint*1).toLocaleString()}}</td>
+                    <td>{{(item.spent*1).toLocaleString()}}</td>
+                    <td>{{(item.available*1).toLocaleString()}}</td>
                 </tr>
                 </tbody>
             </table>
