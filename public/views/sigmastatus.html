@@ -18,9 +18,9 @@
                 <tbody>
                 <tr data-ng-repeat="item in items">
                     <td>{{item.denomination}}</td>
-                    <td>{{$root.currency.getConvertionPretty(item.mint) || item.mint}}</td>
-                    <td>{{$root.currency.getConvertionPretty(item.spent) || item.spent}}</td>
-                    <td>{{$root.currency.getConvertionPretty(item.available) || item.available}}</td>
+                    <td>{{item.mint.toLocaleString()}}</td>
+                    <td>{{item.spent.toLocaleString()}}</td>
+                    <td>{{item.available.toLocaleString()}}</td>
                 </tr>
                 </tbody>
             </table>
