@@ -27,7 +27,8 @@ angular.module('insight')
           clientHeight = window.document.documentElement.clientHeight;
           scrollPos = window.pageYOffset;
 
-          if (pageHeight - (scrollPos + clientHeight) === 0) {
+          var pos = pageHeight - (scrollPos + clientHeight);
+          if(pos <= 1 && pos >= 0) {
             scope.$apply(attr.whenScrolled);
           }
         };
