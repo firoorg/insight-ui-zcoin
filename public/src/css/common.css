@@ -8150,3 +8150,14 @@ a.v_highlight_more {
         width: 320px;
     }
 }
+
+span.znodeTx {
+    color: #3fad54;
+}
+
+table.smallTable {
+    table-layout: auto;
+    width: 50%;
+    border-spacing: 0.5em;
+    border-collapse: separate;
+}

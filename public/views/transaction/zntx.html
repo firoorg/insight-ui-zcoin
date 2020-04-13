@@ -5,6 +5,7 @@
         <span class="glyphicon glyphicon-plus-sign" data-ng-class="{'glyphicon-minus-sign': itemsExpanded}"></span>
       </a>
       <a href="tx/{{tx.txid}}">{{tx.txid}}</a>
+      <span class="znodeTx">ProTx</span>
       <span class="btn-copy" clip-copy="tx.txid"></span>
     </div>
   </div>
@@ -21,97 +22,87 @@
 </div>
 <div class="row line-mid">
   <div class="col-md-5">
-    <div class="row" data-ng-if="tx.isCoinBase">
-      <div class="col-md-12 transaction-vin-vout" data-ng-repeat="vin in tx.vin">
-        <div class="ellipsis">
-          <span translate>No Inputs (Newly Generated Coins)</span>
+     <!-- <<< Simple view -->
+    <div data-ng-if="!itemsExpanded" data-ng-init="currentInNoExpanded=0; sizeInNoExpanded=5">
+      <div class="panel panel-default" data-ng-repeat="vin in tx.vinSimple| startFrom:currentInNoExpanded*sizeInNoExpanded | limitTo:sizeInNoExpanded">
+        <div class="panel-body transaction-vin-vout">
+          <div class="pull-right ZCOIN-value" data-ng-class="{'text-danger': $root.currentAddr == vin.addr}">
+            {{$root.currency.getConvertion(vin.value) || vin.value + ' ZCOIN'}}
+          </div>
+          <div class="ellipsis">
+            <span data-ng-show="vin.notAddr">{{vin.addr}}</span>
+            <span class="text-muted" title="Current Zcoin Address" data-ng-show="vin.addr == $root.currentAddr">{{vin.addr}}</span>
+            <a href="address/{{vin.addr}}" data-ng-show="!vin.notAddr && vin.addr != $root.currentAddr">{{vin.addr}}</a>
+          </div>
+          <div data-ng-show="vin.unconfirmedInput" class="text-danger"> <span class="glyphicon glyphicon-warning-sign"></span> (Input unconfirmed)</div>
+          <div data-ng-show="vin.dbError" class="text-danger">
+            <span class="glyphicon glyphicon-warning-sign"></span>
+            <span translate>Incoherence in levelDB detected:</span> {{vin.dbError}}
+          </div>
+          <div data-ng-show="vin.doubleSpentTxID" class="text-danger">
+            <span class="glyphicon glyphicon-warning-sign"></span>
+            <span translate>Double spent attempt detected. From tx:</span>
+            <a href="tx/{{vin.doubleSpentTxID}}">{{vin.doubleSpentTxID}},{{vin.doubleSpentIndex}}</a>
+          </div>
         </div>
       </div>
+      <div class="showmore_collapse text-left" data-ng-show="tx.vinSimple.length > 5" data-ng-class="{ 'hidden': itemsExpanded}">
+        <button type="button" class="btn btn-info btn-sm" ng-hide="sizeInNoExpanded != tx.vinSimple.length" ng-click="currentInNoExpanded=0; sizeInNoExpanded=5"><i class="glyphicon glyphicon-chevron-up"></i>
+          <span translate>Show less</span></button>
+        <button type="button" class="btn btn-info btn-sm" ng-hide="currentInNoExpanded >= tx.vinSimple.length/sizeInNoExpanded - 1" ng-click="currentInNoExpanded=0; sizeInNoExpanded=tx.vinSimple.length"><i class="glyphicon glyphicon-chevron-down"></i>
+          <span translate>Show more</span></button>
+      </div>
     </div>
-    <div class="row" data-ng-if="!tx.isCoinBase">
 
-      <!-- <<< Simple view -->
-      <div data-ng-if="!itemsExpanded" data-ng-init="currentInNoExpanded=0; sizeInNoExpanded=5">
-        <div class="panel panel-default" data-ng-repeat="vin in tx.vinSimple| startFrom:currentInNoExpanded*sizeInNoExpanded | limitTo:sizeInNoExpanded">
-          <div class="panel-body transaction-vin-vout">
-            <div class="pull-right ZCOIN-value" data-ng-class="{'text-danger': $root.currentAddr == vin.addr}">
+    <!-- <<< Full view -->
+    <div data-ng-if="itemsExpanded" data-ng-init="currentInExpanded=0; sizeInExpanded=(from_vin) ? tx.vin.length : 5; fromVinCollapsed=(from_vin)">
+      <div data-ng-repeat="vin in tx.vin| startFrom:currentInExpanded*sizeInExpanded | limitTo:sizeInExpanded" data-ng-if="fromVinCollapsed ? v_index == vin.n : 1">
+        <div class="panel panel-default transaction-vin-vout">
+          <div class="panel-body">
+            <div class="pull-right ZCOIN-value">
               {{$root.currency.getConvertion(vin.value) || vin.value + ' ZCOIN'}}
             </div>
             <div class="ellipsis">
+              <span class="glyphicon glyphicon-chevron-right" data-ng-show="vin.isSigma"></span>
+              <a class="glyphicon glyphicon-chevron-right" href="tx/{{vin.txid}}/>/{{vin.vout}}" title="Outpoint: {{vin.txid}},{{vin.vout}}" data-ng-show="!vin.isSigma"></a>
               <span data-ng-show="vin.notAddr">{{vin.addr}}</span>
-              <span class="text-muted" title="Current Zcoin Address" data-ng-show="vin.addr == $root.currentAddr">{{vin.addr}}</span>
-              <a href="address/{{vin.addr}}" data-ng-show="!vin.notAddr && vin.addr != $root.currentAddr">{{vin.addr}}</a>
+              <a href="address/{{vin.addr}}" data-ng-show="!vin.notAddr">{{vin.addr}}</a>
             </div>
-            <div data-ng-show="vin.unconfirmedInput" class="text-danger"> <span class="glyphicon glyphicon-warning-sign"></span> (Input unconfirmed)</div>
+            <div data-ng-show="vin.unconfirmedInput" class="text-danger">
+              <span class="glyphicon glyphicon-warning-sign"></span>
+              <span translate>(Input unconfirmed)</span>
+            </div>
             <div data-ng-show="vin.dbError" class="text-danger">
-              <span class="glyphicon glyphicon-warning-sign"></span> 
+              <span class="glyphicon glyphicon-warning-sign"></span>
               <span translate>Incoherence in levelDB detected:</span> {{vin.dbError}}
             </div>
-            <div data-ng-show="vin.doubleSpentTxID" class="text-danger"> 
-              <span class="glyphicon glyphicon-warning-sign"></span> 
-              <span translate>Double spent attempt detected. From tx:</span> 
-              <a href="tx/{{vin.doubleSpentTxID}}">{{vin.doubleSpentTxID}},{{vin.doubleSpentIndex}}</a>
+            <div data-ng-show="vin.doubleSpentTxID" class="text-danger">
+              <span class="glyphicon glyphicon-warning-sign"></span>
+              <span translate>Double spent attempt detected. From tx:</span>
+              <a href="tx/{{doubleSpentTxID}}">{{vin.doubleSpentTxID}},{{vin.doubleSpentIndex}}</a>
             </div>
-          </div>
-        </div>
-        <div class="showmore_collapse text-left" data-ng-show="tx.vinSimple.length > 5" data-ng-class="{ 'hidden': itemsExpanded}">
-          <button type="button" class="btn btn-info btn-sm" ng-hide="sizeInNoExpanded != tx.vinSimple.length" ng-click="currentInNoExpanded=0; sizeInNoExpanded=5"><i class="glyphicon glyphicon-chevron-up"></i> 
-            <span translate>Show less</span></button>
-          <button type="button" class="btn btn-info btn-sm" ng-hide="currentInNoExpanded >= tx.vinSimple.length/sizeInNoExpanded - 1" ng-click="currentInNoExpanded=0; sizeInNoExpanded=tx.vinSimple.length"><i class="glyphicon glyphicon-chevron-down"></i> 
-            <span translate>Show more</span></button>
+          </div> <!-- END OF PANEL BODY -->
+        </div> <!-- END OF PANEL-DEFAULT -->
+        <div class="small" style="margin-left:0.7em; word-wrap:break-word;" data-ng-class="{true: 'v_highlight', false: ''}[from_vin == true && v_index == vin.n]" >
+          <p><strong>Confirmations:</strong> {{tx.confirmations}}</p>
+          <span  data-ng-show="!vin.isSigma"><strong>scriptSig</strong></span>
+            <div data-ng-repeat="item in vin.scriptSig.asm | split:' '" class="">
+              <p class="col-md-11 ellipsis text-muted">{{item}}</p>
+              <p class="btn-copy" clip-copy="item"></p>
+            </div>
         </div>
       </div>
-
-      <!-- <<< Full view -->
-      <div data-ng-if="itemsExpanded" data-ng-init="currentInExpanded=0; sizeInExpanded=(from_vin) ? tx.vin.length : 5; fromVinCollapsed=(from_vin)">
-        <div data-ng-repeat="vin in tx.vin| startFrom:currentInExpanded*sizeInExpanded | limitTo:sizeInExpanded" data-ng-if="fromVinCollapsed ? v_index == vin.n : 1">
-          <div class="panel panel-default transaction-vin-vout">
-            <div class="panel-body">
-              <div class="pull-right ZCOIN-value">
-                {{$root.currency.getConvertion(vin.value) || vin.value + ' ZCOIN'}}
-              </div>
-              <div class="ellipsis">
-                <span class="glyphicon glyphicon-chevron-right" data-ng-show="vin.isSigma"></span>
-                <a class="glyphicon glyphicon-chevron-right" href="tx/{{vin.txid}}/>/{{vin.vout}}" title="Outpoint: {{vin.txid}},{{vin.vout}}" data-ng-show="!vin.isSigma"></a>
-                <span data-ng-show="vin.notAddr">{{vin.addr}}</span>
-                <a href="address/{{vin.addr}}" data-ng-show="!vin.notAddr">{{vin.addr}}</a>
-              </div>
-              <div data-ng-show="vin.unconfirmedInput" class="text-danger"> 
-                <span class="glyphicon glyphicon-warning-sign"></span> 
-                <span translate>(Input unconfirmed)</span>
-              </div>
-              <div data-ng-show="vin.dbError" class="text-danger"> 
-                <span class="glyphicon glyphicon-warning-sign"></span> 
-                <span translate>Incoherence in levelDB detected:</span> {{vin.dbError}}
-              </div>
-              <div data-ng-show="vin.doubleSpentTxID" class="text-danger"> 
-                <span class="glyphicon glyphicon-warning-sign"></span> 
-                <span translate>Double spent attempt detected. From tx:</span> 
-                <a href="tx/{{doubleSpentTxID}}">{{vin.doubleSpentTxID}},{{vin.doubleSpentIndex}}</a>
-              </div>
-            </div> <!-- END OF PANEL BODY -->
-          </div> <!-- END OF PANEL-DEFAULT -->
-          <div class="small" style="margin-left:0.7em; word-wrap:break-word;" data-ng-class="{true: 'v_highlight', false: ''}[from_vin == true && v_index == vin.n]" >
-            <p><strong>Confirmations:</strong> {{tx.confirmations}}</p>
-            <span  data-ng-show="!vin.isSigma"><strong>scriptSig</strong></span>
-              <div data-ng-repeat="item in vin.scriptSig.asm | split:' '" class="">
-                <p class="col-md-11 ellipsis text-muted">{{item}}</p>
-                <p class="btn-copy" clip-copy="item"></p>
-              </div>
-          </div>
-        </div>
-        <div class="text-left">
-          <button type="button" class="btn btn-default btn-sm" data-ng-show="(from_vin) && tx.vin.length > 1" data-ng-disabled="fromVinCollapsed" data-ng-click="currentInExpanded=0; sizeInExpanded=tx.vin.length;fromVinCollapsed=1">
-            <span translate>Show input</span> #{{ v_index }}</button>
-          <button type="button" class="btn btn-default btn-sm" data-ng-show="(from_vin) && tx.vin.length > 1" data-ng-disabled="!fromVinCollapsed" data-ng-click="currentInExpanded=0; sizeInExpanded=tx.vin.length;fromVinCollapsed=0">
-            <span translate>Show all</span></button>
-        </div>
-        <div class="showmore_collapse text-left" data-ng-show="tx.vin.length > 5 && !fromVinCollapsed" data-ng-class="{ 'hidden': !itemsExpanded}">
-          <button type="button" class="btn btn-info btn-sm" ng-hide="sizeInExpanded != tx.vin.length" ng-click="currentInExpanded=0; sizeInExpanded=5"><i class="glyphicon glyphicon-chevron-up"></i> 
-            <span translate>Show less</span></button>
-          <button type="button" class="btn btn-info btn-sm" ng-hide="currentInExpanded >= tx.vin.length/sizeInExpanded - 1" ng-click="currentInExpanded=0; sizeInExpanded=tx.vin.length"><i class="glyphicon glyphicon-chevron-down"></i> 
-            <span translate>Show more</span></button>
-        </div>
+      <div class="text-left">
+        <button type="button" class="btn btn-default btn-sm" data-ng-show="(from_vin) && tx.vin.length > 1" data-ng-disabled="fromVinCollapsed" data-ng-click="currentInExpanded=0; sizeInExpanded=tx.vin.length;fromVinCollapsed=1">
+          <span translate>Show input</span> #{{ v_index }}</button>
+        <button type="button" class="btn btn-default btn-sm" data-ng-show="(from_vin) && tx.vin.length > 1" data-ng-disabled="!fromVinCollapsed" data-ng-click="currentInExpanded=0; sizeInExpanded=tx.vin.length;fromVinCollapsed=0">
+          <span translate>Show all</span></button>
+      </div>
+      <div class="showmore_collapse text-left" data-ng-show="tx.vin.length > 5 && !fromVinCollapsed" data-ng-class="{ 'hidden': !itemsExpanded}">
+        <button type="button" class="btn btn-info btn-sm" ng-hide="sizeInExpanded != tx.vin.length" ng-click="currentInExpanded=0; sizeInExpanded=5"><i class="glyphicon glyphicon-chevron-up"></i>
+          <span translate>Show less</span></button>
+        <button type="button" class="btn btn-info btn-sm" ng-hide="currentInExpanded >= tx.vin.length/sizeInExpanded - 1" ng-click="currentInExpanded=0; sizeInExpanded=tx.vin.length"><i class="glyphicon glyphicon-chevron-down"></i>
+          <span translate>Show more</span></button>
       </div>
     </div>
   </div>
@@ -194,8 +185,24 @@
 </div>
 
 <div class="well well-sm bgwhite ellipsis" data-ng-if="itemsExpanded && !block.hash && tx.blockhash">
-  <strong style="margin-left: 1em" translate>Included in Block</strong> <a class="text-muted" href="block/{{tx.blockhash}}">{{tx.blockhash}}</a>
+  <strong style="margin-left: 1em" translate> Included in Block</strong> <a class="text-muted" href="block/{{tx.blockhash}}">{{tx.blockhash}}</a>
   <span class="btn-copy" clip-copy="tx.blockhash"></span>
+</div>
+
+<div data-ng-if="itemsExpanded" data-ng-init="currentInNoExpanded=0; sizeInNoExpanded=5">
+  <div class="small" style="margin-left:0.7em; word-wrap:break-word;">
+    <h4 translate>Znode Params</h4>
+    <table class="smallTable">
+      <tr>
+        <td translate nowrap=""><b>Znode address</b></td>
+        <td class="text-muted">192.168.1.118:11198</td>
+      </tr>
+      <tr>
+        <td translate><b>Znode output</b></td>
+        <td class="text-muted"><a href="tx/{{tx.txid}}">{{tx.txid}}</a>:1</td>
+      </tr>
+    </table>
+  </div>
 </div>
 
 <div class="line-top row" data-ng-hide="!tx">
