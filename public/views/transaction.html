@@ -87,6 +87,15 @@
             </div>
           </td>
         </tr>
+        <tr data-ng-if="tx.extraPayloadSize">
+          <td><strong>Extra payload</strong></td>
+          <td class="text-muted text-right">
+            <div class="ellipsis">
+              <span class="btn-copy ng-isolate-scope" clip-copy="tx.extraPayLoad"></span>
+              <span class="ng-binding">{{tx.extraPayload}}</span>
+            </div>
+          </td>
+        </tr>
         </tbody>
       </table>
     </div>
