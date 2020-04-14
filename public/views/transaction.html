@@ -87,12 +87,14 @@
             </div>
           </td>
         </tr>
-        <tr data-ng-if="tx.extraPayloadSize">
+        <tr data-ng-if="tx.cbTx">
           <td><strong>Extra payload</strong></td>
           <td class="text-muted text-right">
             <div class="ellipsis">
-              <span class="btn-copy ng-isolate-scope" clip-copy="tx.extraPayLoad"></span>
-              <span class="ng-binding">{{tx.extraPayload}}</span>
+              <span class="ng-binding">Version: {{tx.cbTx.version}}</span><br>
+              <span class="ng-binding">Height: {{tx.cbTx.height}}</span><br>
+              <span class="ng-binding">Node List: {{tx.cbTx.merkleRootMNList}}</span><br>
+              <span data-ng-if="tx.cbTx.version>1" class="ng-binding">Quorums: {{tx.cbTx.merkleRootQuorums}}</span>
             </div>
           </td>
         </tr>
