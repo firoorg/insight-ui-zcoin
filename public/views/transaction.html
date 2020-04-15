@@ -87,20 +87,10 @@
             </div>
           </td>
         </tr>
-        <tr data-ng-if="tx.cbTx">
-          <td><strong>Extra payload</strong></td>
-          <td class="text-muted text-right">
-            <div class="ellipsis">
-              <span class="ng-binding">Version: {{tx.cbTx.version}}</span><br>
-              <span class="ng-binding">Height: {{tx.cbTx.height}}</span><br>
-              <span class="ng-binding">Node List: {{tx.cbTx.merkleRootMNList}}</span><br>
-              <span data-ng-if="tx.cbTx.version>1" class="ng-binding">Quorums: {{tx.cbTx.merkleRootQuorums}}</span>
-            </div>
-          </td>
-        </tr>
         </tbody>
       </table>
     </div>
+    <div data-ng-include src="'views/transaction/extrapayload.html'"  data-ng-show="tx.cbTx || tx.finalCommitment"></div>
     <h2 translate>Details</h2>
     <div class="block-tx" data-ng-if="tx.txid">
       <div data-ng-include src="'views/transaction/tx.html'"></div>
