@@ -1,0 +1,65 @@
+<div style="float: right">
+    <a class="btn-expand" title="Show/Hide items details" data-ng-click="extraPayloadExpanded = !extraPayloadExpanded">
+        <strong>
+            <span data-ng-if="tx.cbTx">Coinbase</span>
+            <span data-ng-if="tx.finalCommitment">Final Commitment</span>
+        </strong>
+        <span class="glyphicon glyphicon-plus-sign" data-ng-class="{'glyphicon-minus-sign': extraPayloadExpanded}"></span>
+    </a>
+</div>
+<table  style="..." class="table" data-ng-show="extraPayloadExpanded && tx.cbTx">
+    <tbody>
+    <tr>
+        <td class="text-muted">Version</td>
+        <td class="text-muted ellipsis">{{tx.cbTx.version}}</td>
+    </tr>
+    <tr>
+        <td class="text-muted">Height</td>
+        <td class="text-muted ellipsis">{{tx.cbTx.height}}</td>
+    </tr>
+    <tr>
+        <td class="text-muted">Node List</td>
+        <td class="text-muted ellipsis">{{tx.cbTx.merkleRootMNList}}</td>
+    </tr>
+    <tr data-ng-if="tx.cbTx.version>1">
+        <td class="text-muted">Quorums</td>
+        <td class="text-muted ellipsis">{{tx.cbTx.merkleRootQuorums}}</td>
+    </tr>
+    </tbody>
+</table>
+<table  style="..." class="table" data-ng-show="extraPayloadExpanded && tx.finalCommitment">
+    <tbody>
+    <tr>
+        <td class="text-muted">Version</td>
+        <td class="text-muted ellipsis">{{tx.finalCommitment.version}}</td>
+    </tr>
+    <tr>
+        <td class="text-muted">Height</td>
+        <td class="text-muted ellipsis">{{tx.finalCommitment.height}}</td>
+    </tr>
+    <tr>
+        <td class="text-muted">Commitment Version</td>
+        <td class="text-muted ellipsis">{{tx.finalCommitment.commitment.version}}</td>
+    </tr>
+    <tr>
+        <td class="text-muted">LLMQ Type</td>
+        <td class="text-muted ellipsis">{{tx.finalCommitment.commitment.llmqType}}</td>
+    </tr>
+    <tr>
+        <td class="text-muted">Quorum Hash</td>
+        <td class="text-muted ellipsis">{{tx.finalCommitment.commitment.quorumHash}}</td>
+    </tr>
+    <tr>
+        <td class="text-muted">Signers Count</td>
+        <td class="text-muted ellipsis">{{tx.finalCommitment.commitment.signersCount}}</td>
+    </tr>
+    <tr>
+        <td class="text-muted">Valid Members Count</td>
+        <td class="text-muted ellipsis">{{tx.finalCommitment.commitment.validMembersCount}}</td>
+    </tr>
+    <tr>
+        <td class="text-muted">Quorum Public Key</td>
+        <td class="text-muted ellipsis">{{tx.finalCommitment.commitment.quorumPublicKey}}</td>
+    </tr>
+    </tbody>
+</table>

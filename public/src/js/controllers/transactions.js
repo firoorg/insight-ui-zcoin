@@ -170,6 +170,7 @@ function($scope, $rootScope, $routeParams, $location, Global, Transaction, Trans
     $scope.from_vout = $routeParams.v_type == '>' ? true : false;
     $scope.v_index = parseInt($routeParams.v_index);
     $scope.itemsExpanded = true;
+    $scope.extraPayloadExpanded = false;
   }
   
   //Init without txs
