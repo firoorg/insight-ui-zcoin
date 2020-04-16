@@ -1,12 +1,128 @@
 <div style="float: right">
     <a class="btn-expand" title="Show/Hide items details" data-ng-click="extraPayloadExpanded = !extraPayloadExpanded">
         <strong>
+            <span data-ng-if="tx.proReg">Provider Register</span>
+            <span data-ng-if="tx.proUpServ">Provider Udate Service</span>
+            <span data-ng-if="tx.proUpReg">Provider Udate Registrar</span>
+            <span data-ng-if="tx.proUpRev">Provider Revoke</span>
             <span data-ng-if="tx.cbTx">Coinbase</span>
             <span data-ng-if="tx.finalCommitment">Final Commitment</span>
         </strong>
         <span class="glyphicon glyphicon-plus-sign" data-ng-class="{'glyphicon-minus-sign': extraPayloadExpanded}"></span>
     </a>
 </div>
+<table  style="..." class="table" data-ng-show="extraPayloadExpanded && tx.proReg">
+    <tbody>
+    <tr>
+        <td class="text-muted">Version</td>
+        <td class="text-muted ellipsis">{{tx.proReg.version}}</td>
+    </tr>
+    <tr>
+        <td class="text-muted">Collateral</td>
+        <td class="text-muted ellipsis">
+            <a href="tx/{{tx.proReg.collateralHash}}">{{tx.proReg.collateralHash}}:{{tx.proReg.collateralIndex}}</a>
+        </td>
+    </tr>
+    <tr>
+        <td class="text-muted">Service</td>
+        <td class="text-muted ellipsis">{{tx.proReg.service}}</td>
+    </tr>
+    <tr>
+        <td class="text-muted">Owner Address</td>
+        <td class="text-muted ellipsis"><a href="address/{{tx.proReg.ownerAddress}}">{{tx.proReg.ownerAddress}}</a></td>
+    </tr>
+    <tr>
+        <td class="text-muted">Payout Address</td>
+        <td class="text-muted ellipsis"><a href="address/{{tx.proReg.payoutAddress}}">{{tx.proReg.payoutAddress}}</a></td>
+    </tr>
+    <tr>
+        <td class="text-muted">Operator Pubkey</td>
+        <td class="text-muted ellipsis">{{tx.proReg.pubKeyOperator}}</td>
+    </tr>
+    <tr>
+        <td class="text-muted">Operator Reward</td>
+        <td class="text-muted ellipsis">{{tx.proReg.operatorReward}}</td>
+    </tr>
+    <tr>
+        <td class="text-muted">Input Hash</td>
+        <td class="text-muted ellipsis">{{tx.proReg.inputsHash}}</td>
+    </tr>
+    </tbody>
+</table>
+<table  style="..." class="table" data-ng-show="extraPayloadExpanded && tx.proUpServ">
+    <tbody>
+    <tr>
+        <td class="text-muted">Version</td>
+        <td class="text-muted ellipsis">{{tx.proUpServ.version}}</td>
+    </tr>
+    <tr>
+        <td class="text-muted">Provider Tx Hash</td>
+        <td class="text-muted ellipsis">
+            <a href="tx/{{tx.proUpServ.proTxHash}}">{{tx.proUpServ.proTxHash}}</a>
+        </td>
+    </tr>
+    <tr>
+        <td class="text-muted">Service</td>
+        <td class="text-muted ellipsis">{{tx.proUpServ.service}}</td>
+    </tr>
+    <tr>
+        <td class="text-muted">Operator Payout Address</td>
+        <td class="text-muted ellipsis"><a href="address/{{tx.proUpServ.operatorPayoutAddress}}">{{tx.proUpServ.operatorPayoutAddress}}</a></td>
+    </tr>
+    <tr>
+        <td class="text-muted">Input Hash</td>
+        <td class="text-muted ellipsis">{{tx.proUpServ.inputsHash}}</td>
+    </tr>
+    </tbody>
+</table>
+<table  style="..." class="table" data-ng-show="extraPayloadExpanded && tx.proUpReg">
+    <tbody>
+    <tr>
+        <td class="text-muted">Version</td>
+        <td class="text-muted ellipsis">{{tx.proUpReg.version}}</td>
+    </tr>
+    <tr>
+        <td class="text-muted">Provider Tx Hash</td>
+        <td class="text-muted ellipsis">
+            <a href="tx/{{tx.proUpReg.proTxHash}}">{{tx.proUpReg.proTxHash}}</a>
+        </td>
+    </tr>
+    <tr>
+        <td class="text-muted">Payout Address</td>
+        <td class="text-muted ellipsis"><a href="address/{{tx.proUpReg.payoutAddress}}">{{tx.proUpReg.payoutAddress}}</a></td>
+    </tr>
+    <tr>
+        <td class="text-muted">Operator Pubkey</td>
+        <td class="text-muted ellipsis">{{tx.proUpReg.pubKeyOperator}}</td>
+    </tr>
+    <tr>
+        <td class="text-muted">Input Hash</td>
+        <td class="text-muted ellipsis">{{tx.proUpReg.inputsHash}}</td>
+    </tr>
+    </tbody>
+</table>
+<table  style="..." class="table" data-ng-show="extraPayloadExpanded && tx.proUpRev">
+    <tbody>
+    <tr>
+        <td class="text-muted">Version</td>
+        <td class="text-muted ellipsis">{{tx.proUpRev.version}}</td>
+    </tr>
+    <tr>
+        <td class="text-muted">Provider Tx Hash</td>
+        <td class="text-muted ellipsis">
+            <a href="tx/{{tx.proUpRev.proTxHash}}">{{tx.proUpRev.proTxHash}}</a>
+        </td>
+    </tr>
+    <tr>
+        <td class="text-muted">Reason</td>
+        <td class="text-muted ellipsis">{{tx.proUpRev.reason}}</td>
+    </tr>
+    <tr>
+        <td class="text-muted">Input Hash</td>
+        <td class="text-muted ellipsis">{{tx.proUpRev.inputsHash}}</td>
+    </tr>
+    </tbody>
+</table>
 <table  style="..." class="table" data-ng-show="extraPayloadExpanded && tx.cbTx">
     <tbody>
     <tr>
