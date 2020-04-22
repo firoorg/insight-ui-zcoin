@@ -1,6 +1,6 @@
 # Insight UI Zcoin
 
-A Zcoin blockchain explorer web application service for [Bitcore Node Zcoin](https://github.com/zcoinpay/bitcore-node-zcoin) using [Insight API Zcoin](https://github.com/zcoinpay/insight-api-zcoin).
+A Zcoin blockchain explorer web application service for [Bitcore Node Zcoin](https://github.com/zcoinofficial/bitcore-node-zcoin) using [Insight API Zcoin](https://github.com/zcoinofficial/insight-api-zcoin).
 
 ## Quick Start
 
