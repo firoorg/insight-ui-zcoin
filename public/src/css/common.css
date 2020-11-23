@@ -84,7 +84,7 @@ h1:after {
     display: block;
     height: 3px;
     width: 80px;
-    background: #3fad54;
+    background: #9b1c2e;
     margin-top: 4px;
 }
 
@@ -543,7 +543,7 @@ h1,
 h2,
 .h2 {
     font-size: 30px;
-    color: #3fad54 !important;
+    color: #9b1c2e !important;
     padding-bottom: 16px;
 }
 
@@ -2864,7 +2864,7 @@ input[type=button].btn-block {
 }
 
 span.glyphicon.glyphicon-qrcode {
-    color: #3fad54;
+    color: #9b1c2e;
 }
 
 .glyphicon {
@@ -4591,7 +4591,7 @@ select[multiple].input-group-sm>.input-group-btn>.btn {
 @media (min-width:768px) {
     .navbar>.container .navbar-brand,
     .navbar>.container-fluid .navbar-brand {
-        margin: 8px 0 0 -16px;
+        margin: 0 0 0 -16px;
     }
 }
 
@@ -4854,7 +4854,7 @@ select[multiple].input-group-sm>.input-group-btn>.btn {
     display: block;
     width: 100%;
     height: 4px;
-    background: #3fad54;
+    background: #9b1c2e;
     position: absolute;
     top: 0;
     left: 0;
@@ -4886,7 +4886,7 @@ li:nth-child(1) a.ng-binding:before {
 
 li:nth-child(2) a.ng-binding:before {
     content: "";
-    background: url(../img/zerocoin_icon_nav.svg) no-repeat;
+    background: url(../img/FiroSymbol.svg) no-repeat;
     display: inline-block;
     width: 24px;
     height: 24px;
@@ -7083,7 +7083,7 @@ h6,
 }
 
 #ngProgress {
-    background-color: #3fad54!important;
+    background-color: #9b1c2e!important;
     box-shadow: none!important;
     color: #1e1e2d!important;
     height: 4px!important;
@@ -7245,7 +7245,7 @@ h6,
 
 .navbar-default .navbar-nav>.active>a,
 .navbar-default .navbar-nav>.active>a:focus {
-    background-color: #3fad54;
+    background-color: #9b1c2e;
     color: #fff;
 }
 
@@ -7311,6 +7311,8 @@ h6,
     background-position: 5px center;
     background-repeat: no-repeat;
     padding-left: 25px;
+    -webkit-filter: invert(40%) grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(400%) contrast(2);
+      filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);
 }
 
 .loader-gif {
@@ -7319,6 +7321,8 @@ h6,
     height: 11px;
     background: transparent url(../img/loading.gif) no-repeat;
     margin-left: 5px;
+    -webkit-filter: invert(40%) grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(400%) contrast(2);
+      filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);
 }
 
 #search {
@@ -7399,7 +7403,7 @@ table#status_info {
 }
 
 .block-id {
-    background-color: #3fad54;
+    background-color: #9b1c2e;
     border: 0;
     margin: -16px 0 0 -16px;
     width: 280px;
@@ -7409,7 +7413,7 @@ table#status_info {
 
 @media (max-width:1199px) {
   .block-id {
-      background-color: #3fad54;
+      background-color: #9b1c2e;
       margin: -16px 0 0 -16px;
       border: 0;
       width: 250px;
@@ -7424,7 +7428,7 @@ table#status_info {
 
 @media (max-width:991px) {
   .block-id {
-      background-color: #3fad54;
+      background-color: #9b1c2e;
       border: 0;
       margin: 0;
       width: 100%;
@@ -7482,7 +7486,7 @@ a.btn.btn-primary.btn-xs.ng-pristine.ng-invalid.ng-invalid-required {
 }
 
 .btn-primary {
-    background-color: #3fad54;
+    background-color: #9b1c2e;
     border: 0;
     border-radius: 100px;
 }
@@ -8114,7 +8118,7 @@ a.v_highlight_more {
       letter-spacing: 0.5px;
     }
     h2 {
-      color: #3fad54 !important;
+      color: #9b1c2e !important;
       padding: 16px 0;
     }
     .navbar-default .navbar-nav>li>a {
@@ -8124,7 +8128,7 @@ a.v_highlight_more {
         height: auto;
     }
     span.glyphicon.glyphicon-qrcode {
-      color: #3fad54;
+      color: #9b1c2e;
       margin-right: 4px;
       margin-left: 8px;
     }
@@ -8143,7 +8147,7 @@ a.v_highlight_more {
 }
 
 span.znodeTx {
-    color: #3fad54;
+    color: #9b1c2e;
 }
 
 table.smallTable {
