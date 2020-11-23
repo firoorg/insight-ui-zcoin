@@ -86,11 +86,11 @@ module.exports = function (grunt) {
         },
         watch: {
             main: {
-                files: ['public/src/js/**/*.js'],
+                files: ['public/src/js/*.js', 'public/src/js/**/*.js'],
                 tasks: ['concat:main', 'uglify:main'],
             },
             css: {
-                files: ['public/src/css/**/*.css'],
+                files: ['public/src/css/*.css', 'public/src/css/**/*.css'],
                 tasks: ['concat:css', 'cssmin'],
             },
         },

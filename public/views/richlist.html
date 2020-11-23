@@ -6,9 +6,9 @@
     <table class="table" data-ng-controller="RealSupplyController">
       <tbody>
         <tr>
-          <td translate>Total XZC supply</td>
+          <td translate>Total FIRO supply</td>
           <td class="text-right">{{realSupply}}</td>
-          <td class="text-right" ng-style="{'visibility': $root.currency.symbol=='ZCOIN'?'hidden':'visible'}">{{$root.currency.getConvertion(realSupplyRaw)}}</td>
+          <td class="text-right" ng-style="{'visibility': $root.currency.symbol=='FIRO'?'hidden':'visible'}">{{$root.currency.getConvertion(realSupplyRaw)}}</td>
         </tr>
       </tbody>
     </table>

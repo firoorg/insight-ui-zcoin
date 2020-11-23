@@ -5,9 +5,9 @@ angular.module('insight.system').controller('HeaderController',
     $scope.global = Global;
 
     $rootScope.currency = {
-      factor: 1,
-      bitstamp: 0,
-      symbol: 'ZCOIN'
+        factor: 1,
+        bitstamp: 0,
+        symbol: "FIRO",
     };
 
     $scope.menu = [
