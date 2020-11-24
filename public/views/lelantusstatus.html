@@ -1,0 +1,78 @@
+<div></div>
+<section>
+    <div class="page-header">
+        <h1 translate>Lelantus Status</h1>
+    </div>
+    <div id="status" class="row">
+        <div class="col-xs-12 col-md-8">
+            <div data-ng-controller="LelantusStatusController">
+            <h2 translate>Lelantus Tx value breakdown</h2>
+                <table class="table">
+                  <thead>
+                    <tr>
+                        <th colspan="2" align="center" translate>Minted</th>
+                        <th colspan="2" align="center" translate>Splited</th>
+                    </tr>
+                    <tr>
+                        <th translate>Amount</th>
+                        <th translate>Tx #</th>
+                        <th translate>Amount</th>
+                        <th translate>Tx #</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <td>{{items.stats.mt}}</td>
+                    <td>{{items.stats.mc}}</td>
+                    <td>{{items.stats.jt}}</td>
+                    <td>{{items.stats.jc}}</td>
+                  </tbody>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th translate>>=</th>
+                    <th translate><</th>
+                    <th translate>Total</th>
+                    <th translate>Tx #</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr data-ng-repeat="item in items.mints">
+                    <td>{{item.lb}}</td>
+                    <td>{{item.ub}}</td>
+                    <td>{{item.tot}}</td>
+                    <td>{{item.cnt}}</td>
+                </tr>
+                </tbody>
+                <br>
+                <tbody>
+                <tr data-ng-repeat="item in items.jsplits">
+                    <td>{{item.lb}}</td>
+                    <td>{{item.ub}}</td>
+                    <td>{{item.tot}}</td>
+                    <td>{{item.cnt}}</td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+            <h2 translate>Sigma denomination breakdown</h2>
+            <table class="table" data-ng-controller="SigmaStatusController">
+                <thead>
+                <tr>
+                    <th translate>Denom</th>
+                    <th translate>Mint</th>
+                    <th translate>Spent</th>
+                    <th translate>Available</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr data-ng-repeat="item in items">
+                    <td>{{item.denomination}}</td>
+                    <td>{{(item.mint*1).toLocaleString()}}</td>
+                    <td>{{(item.spent*1).toLocaleString()}}</td>
+                    <td>{{(item.available*1).toLocaleString()}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div> <!-- END OF COL-8 -->
+    </div>
+</section>

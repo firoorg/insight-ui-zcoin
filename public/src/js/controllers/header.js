@@ -27,10 +27,10 @@ angular.module('insight.system').controller('HeaderController',
             'link': 'status'
           },
           {
-            'title': 'Sigma',
-            'link': 'sigmastatus'
-	  },
-	  {
+            'title': 'Lelantus',
+            'link': 'lelantusstatus'
+          },
+          {
             'title': 'Faucet',
             'link': 'faucet'
           }

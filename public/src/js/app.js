@@ -25,7 +25,8 @@ angular.module('insight',[
   'insight.messages',
   'insight.richlist',
   'insight.faucet',
-  'insight.sigmastatus'
+  'insight.sigmastatus',
+  'insight.lelantusstatus'
 ]);
 
 angular.module('insight.system', []);
@@ -41,3 +42,4 @@ angular.module('insight.messages', []);
 angular.module('insight.richlist', []);
 angular.module('insight.faucet', []);
 angular.module('insight.sigmastatus', []);
+angular.module('insight.lelantusstatus', []);
