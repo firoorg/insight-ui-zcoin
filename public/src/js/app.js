@@ -12,6 +12,7 @@ angular.module('insight',[
   'ui.route',
   'monospaced.qrcode',
   'gettext',
+  'chart.js',
   'angularMoment',
   'insight.system',
   'insight.socket',

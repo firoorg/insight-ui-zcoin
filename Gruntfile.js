@@ -34,7 +34,7 @@ module.exports = function (grunt) {
                 dest: 'public/js/angularjs-all.js'
             },
             main: {
-                src: ['public/src/js/app.js', 'public/src/js/controllers/*.js', 'public/src/js/services/*.js', 'public/src/js/directives.js', 'public/src/js/filters.js', 'public/src/js/config.js', 'public/src/js/init.js', 'public/src/js/translations.js'],
+                src: ['public/src/js/app.js', 'public/src/js/controllers/*.js', 'public/src/js/services/*.js', 'public/src/js/directives.js', 'public/src/js/filters.js', 'public/src/js/config.js', 'public/src/js/init.js', 'public/src/js/translations.js','public/lib/chart.js/dist/Chart.min.js','public/lib/angular-chart.js/dist/angular-chart.min.js'],
                 dest: 'public/js/main.js'
             },
             css: {

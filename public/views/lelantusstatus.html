@@ -6,45 +6,31 @@
     <div id="status" class="row">
         <div class="col-xs-12 col-md-8">
             <div data-ng-controller="LelantusStatusController">
+
             <h2 translate>Lelantus Tx value breakdown</h2>
-                <table class="table">
-                  <thead>
-                    <tr>
-                        <th colspan="2" align="center" translate>Minted</th>
-                        <th colspan="2" align="center" translate>Split</th>
-                    </tr>
-                    <tr>
-                        <th translate>Amount</th>
-                        <th translate>Tx #</th>
-                        <th translate>Amount</th>
-                        <th translate>Tx #</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <td>{{items.stats.mt}}</td>
-                    <td>{{items.stats.mc}}</td>
-                    <td>{{items.stats.jt}}</td>
-                    <td>{{items.stats.jc}}</td>
-                  </tbody>
             <table class="table">
-                <thead>
+              <thead>
                 <tr>
-                    <th translate>>=</th>
-                    <th translate><</th>
-                    <th translate>Minted Amount</th>
-                    <th translate>Split Amount</th>
+                    <th colspan="2" align="center" translate>Minted</th>
+                    <th colspan="2" align="center" translate>Split</th>
                 </tr>
-                </thead>
-                <tbody>
-                <tr data-ng-repeat="item in items.mints">
-                    <td>{{item.lb}}</td>
-                    <td>{{item.ub}}</td>
-                    <td>{{item.tot}}</td>
-                    <td>{{item.jtot}}</td>
+                <tr>
+                    <th translate>Amount</th>
+                    <th translate>Tx #</th>
+                    <th translate>Amount</th>
+                    <th translate>Tx #</th>
                 </tr>
-                </tbody>
+              </thead>
+              <tbody>
+                <td>{{items.stats.mt}}</td>
+                <td>{{items.stats.mc}}</td>
+                <td>{{items.stats.jt}}</td>
+                <td>{{items.stats.jc}}</td>
+              </tbody>
             </table>
-            </div>
+            <canvas id="bar" class="chart chart-bar chart-mint-spend"
+                    chart-data="data" chart-labels="labels" chart-series="series" chart-colors="colors">
+            </canvas>
             <h2 translate>Sigma denomination breakdown</h2>
             <table class="table" data-ng-controller="SigmaStatusController">
                 <thead>
