@@ -22,11 +22,10 @@ angular.module('insight.lelantusstatus')
         stats.mc += values.mints[i].cnt * 1;
         values.mints[i].jtot = (values.jsplits[i].tot * 1).toFixed(4);
         values.mints[i].tot = (values.mints[i].tot * 1).toFixed(4)
-        $scope.labels.push(values.mints[i].lb);
+        $scope.labels.push((values.mints[i].lb * 1 + values.mints[i].ub * 1)/2);
         $scope.data[0].push(values.mints[i].tot);
         $scope.data[1].push(values.jsplits[i].tot);
       }
-      $scope.labels.push(values.mints[values.mints.length - 1].ub);
       $scope.items.stats = stats;
         // $scope.labels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
         // $scope.series = ['Mints', 'Splits'];
