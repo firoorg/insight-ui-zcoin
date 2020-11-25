@@ -27,13 +27,13 @@ angular.module('insight.system').controller('HeaderController',
             'link': 'status'
           },
 	  {
-            'title': 'Faucet',
-            'link': 'faucet'
-	  },
-	  {
             'title': 'Lelantus',
             'link': 'lelantusstatus'
-          }
+          },
+	  {
+            'title': 'Faucet',
+            'link': 'faucet'
+	  }
         ]
       }
     ];
