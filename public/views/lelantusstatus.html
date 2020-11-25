@@ -11,7 +11,7 @@
                   <thead>
                     <tr>
                         <th colspan="2" align="center" translate>Minted</th>
-                        <th colspan="2" align="center" translate>Splited</th>
+                        <th colspan="2" align="center" translate>Split</th>
                     </tr>
                     <tr>
                         <th translate>Amount</th>
@@ -31,8 +31,8 @@
                 <tr>
                     <th translate>>=</th>
                     <th translate><</th>
-                    <th translate>Amount</th>
-                    <th translate>Tx #</th>
+                    <th translate>Minted Amount</th>
+                    <th translate>Split Amount</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -40,16 +40,7 @@
                     <td>{{item.lb}}</td>
                     <td>{{item.ub}}</td>
                     <td>{{item.tot}}</td>
-                    <td>{{item.cnt}}</td>
-                </tr>
-                </tbody>
-                <br>
-                <tbody>
-                <tr data-ng-repeat="item in items.jsplits">
-                    <td>{{item.lb}}</td>
-                    <td>{{item.ub}}</td>
-                    <td>{{item.tot}}</td>
-                    <td>{{item.cnt}}</td>
+                    <td>{{item.jtot}}</td>
                 </tr>
                 </tbody>
             </table>
