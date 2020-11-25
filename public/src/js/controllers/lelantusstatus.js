@@ -17,7 +17,8 @@ angular.module('insight.lelantusstatus')
         stats.jc += values.jsplits[i].cnt * 1;
         stats.mt += values.mints[i].tot * 1;
         stats.mc += values.mints[i].cnt * 1;
-        values.mints[i].jtot = values.jsplits[i].tot;
+        values.mints[i].jtot = (values.jsplits[i].tot * 1).toFixed(4);
+        values.mints[i].tot = (values.mints[i].tot * 1).toFixed(4)
       }
       $scope.items.stats = stats;
     });
