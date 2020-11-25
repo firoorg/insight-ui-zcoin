@@ -12,6 +12,7 @@ angular.module('insight',[
   'ui.route',
   'monospaced.qrcode',
   'gettext',
+  'chart.js',
   'angularMoment',
   'insight.system',
   'insight.socket',
@@ -24,7 +25,8 @@ angular.module('insight',[
   'insight.currency',
   'insight.messages',
   'insight.richlist',
-  'insight.sigmastatus'
+  'insight.sigmastatus',
+  'insight.lelantusstatus'
 ]);
 
 angular.module('insight.system', []);
@@ -39,3 +41,4 @@ angular.module('insight.currency', []);
 angular.module('insight.messages', []);
 angular.module('insight.richlist', []);
 angular.module('insight.sigmastatus', []);
+angular.module('insight.lelantusstatus', []);

@@ -1,0 +1,58 @@
+<div></div>
+<section>
+    <div class="page-header">
+        <h1 translate>Lelantus Status</h1>
+    </div>
+    <div id="status" class="row">
+        <div class="col-xs-12 col-md-8">
+            <div data-ng-controller="LelantusStatusController">
+
+            <h2 translate>Lelantus Tx value breakdown</h2>
+            <table class="table">
+              <thead>
+                <tr>
+                    <th colspan="2" align="center" translate>Minted</th>
+                    <th colspan="2" align="center" translate>Split</th>
+                    <th colspan="2" align="center" translate>Available</th>
+                </tr>
+                <tr>
+                    <th translate>Amount</th>
+                    <th translate>Tx #</th>
+                    <th translate>Amount</th>
+                    <th translate>Tx #</th>
+                    <th translate>Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <td style="color:#33cc33">{{items.stats.mt}}</td>
+                <td style="color:#33cc33">{{items.stats.mc}}</td>
+                <td style="color:#9b1c2e">{{items.stats.jt}}</td>
+                <td style="color:#9b1c2e">{{items.stats.jc}}</td>
+                <td>{{items.stats.mt-items.stats.jt}}</td>
+              </tbody>
+            </table>
+            <canvas id="bar" class="chart chart-bar chart-mint-spend"
+                    chart-data="data" chart-labels="labels" chart-series="series" chart-colors="colors">
+            </canvas>
+            <h2 translate>Sigma denomination breakdown</h2>
+            <table class="table" data-ng-controller="SigmaStatusController">
+                <thead>
+                <tr>
+                    <th translate>Denom</th>
+                    <th translate>Minted</th>
+                    <th translate>Spent</th>
+                    <th translate>Available</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr data-ng-repeat="item in items">
+                    <td>{{item.denomination}}</td>
+                    <td>{{(item.mint*1).toLocaleString()}}</td>
+                    <td>{{(item.spent*1).toLocaleString()}}</td>
+                    <td>{{(item.available*1).toLocaleString()}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div> <!-- END OF COL-8 -->
+    </div>
+</section>
