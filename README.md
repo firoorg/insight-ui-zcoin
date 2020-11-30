@@ -1,10 +1,10 @@
-# Insight UI Zcoin
+# Insight UI Firo
 
-A Zcoin blockchain explorer web application service for [Bitcore Node Zcoin](https://github.com/zcoinofficial/bitcore-node-zcoin) using [Insight API Zcoin](https://github.com/zcoinofficial/insight-api-zcoin).
+A Firo blockchain explorer web application service for [Bitcore Node Firo](https://github.com/zcoinofficial/bitcore-node-zcoin) using [Insight API Firo](https://github.com/zcoinofficial/insight-api-zcoin).
 
 ## Getting Started
 
-Please refer to [Bitcore Node Zcoin](https://github.com/zcoinofficial/bitcore-node-zcoin) for a quick start quide.
+Please refer to [Bitcore Node Firo](https://github.com/zcoinofficial/bitcore-node-zcoin) for a quick start quide.
 
 To manually install all of the necessary components, you can run these commands:
 
@@ -21,7 +21,7 @@ Open a web browser to `http://localhost:3881/insight/`
 
 ## Development
 
-To run Insight UI Zcoin locally in development mode:
+To run Insight UI Firo locally in development mode:
 
 Install bower dependencies:
 
@@ -43,7 +43,7 @@ $ grunt
 
 ## Multilanguage support
 
-Insight UI Zcoin uses [angular-gettext](http://angular-gettext.rocketeer.be) for multilanguage support.
+Insight UI Firo uses [angular-gettext](http://angular-gettext.rocketeer.be) for multilanguage support.
 
 To enable a text to be translated, add the ***translate*** directive to html tags. See more details [here](http://angular-gettext.rocketeer.be/dev-guide/annotate/). Then, run:
 
@@ -72,7 +72,7 @@ For more details about the [Insight API](https://github.com/zcoinpay/insight-api
 
 ## Contribute
 
-Contributions and suggestions are welcomed at the [Insight UI Zcoin GitHub repository](https://github.com/zcoinofficial/insight-ui-zcoin).
+Contributions and suggestions are welcomed at the [Insight UI Firo GitHub repository](https://github.com/zcoinofficial/insight-ui-zcoin).
 
 
 ## License
