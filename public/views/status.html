@@ -58,6 +58,45 @@
         </tbody>
       </table>
 
+      <div data-ng-controller="StatusController" data-ng-init="getStatus('MempoolSporks')" >
+      <h2 data-ng-if="data" translate>Mempool Sporks</h2>
+        <table class="table" id="spork_status" data-ng-if="data">
+            <thead  data-ng-include src="'views/includes/infoStatus.html'">
+            </thead>
+            <tbody>
+            <tr>
+                <td translate>Feature</td>
+                <td translate>Height</td>
+                <td translate>Parameter</td>
+            </tr>
+            <tr data-ng-repeat="item in data">
+                <td>{{item.feature}}</td>
+                <td>{{item.enableAtHeight}}</td>
+                <td>{{item.parameter}}</td>
+            </tr>
+            </tbody>
+        </table>
+      </div>
+      <div data-ng-controller="StatusController" data-ng-init="getStatus('BlockchainSporks')">
+      <h2 data-ng-if="data" translate>Blockchain Sporks</h2>
+        <table class="table" id="spork_status" data-ng-if="data">
+            <thead  data-ng-include src="'views/includes/infoStatus.html'">
+            </thead>
+            <tbody>
+            <tr>
+                <td translate>Feature</td>
+                <td translate>Height</td>
+                <td translate>Parameter</td>
+            </tr>
+            <tr data-ng-repeat="item in data">
+                <td>{{item.feature}}</td>
+                <td>{{item.enableAtHeight}}</td>
+                <td>{{item.parameter}}</td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+
       <h2 translate>Last Block</h2>
       <table class="table" style="table-layout: fixed" data-ng-controller="StatusController" data-ng-init="getStatus('LastBlockHash')">
         <thead data-ng-include src="'views/includes/infoStatus.html'"></thead>
