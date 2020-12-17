@@ -1,6 +1,6 @@
 {
     "name": "insight-ui-zcoin",
-    "description": "An open-source frontend for the Insight API. The Insight API provides you with a convenient, powerful and simple way to query and broadcast data on the Zcoin network and build your own services with it.",
+    "description": "An open-source frontend for the Insight API. The Insight API provides you with a convenient, powerful and simple way to query and broadcast data on the Firo network and build your own services with it.",
     "version": "0.4.3",
     "repository": "git://github.com/sn-ntu/insight-ui-zcoin.git",
     "contributors": [
