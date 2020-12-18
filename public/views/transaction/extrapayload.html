@@ -7,6 +7,7 @@
             <span data-ng-if="tx.proUpRev">Provider Revoke</span>
             <span data-ng-if="tx.cbTx">Coinbase</span>
             <span data-ng-if="tx.finalCommitment">Final Commitment</span>
+            <span data-ng-if="tx.sporkTx">Spork Control</span>
         </strong>
         <span class="glyphicon glyphicon-plus-sign" data-ng-class="{'glyphicon-minus-sign': extraPayloadExpanded}"></span>
     </a>
@@ -179,3 +180,23 @@
     </tr>
     </tbody>
 </table>
+
+<div data-ng-show="extraPayloadExpanded && tx.sporkTx">
+<table  style="..." class="table" >
+    <span class="text-muted">Version: {{tx.sporkTx.version}}</span>
+    <tbody>
+    <tr>
+        <td class="text-muted" translate>Feature</td>
+        <td class="text-muted" translate>Height</td>
+        <td class="text-muted" translate>Parameter</td>
+        <td class="text-muted" translate>Type</td>
+    </tr>
+    <tr data-ng-repeat="item in tx.sporkTx.actions">
+        <td>{{item.feature}}</td>
+        <td>{{item.enableAtHeight}}</td>
+        <td>{{item.parameter}}</td>
+        <td>{{item.actiontype}}</td>
+    </tr>
+    </tbody>
+</table>
+</div>
