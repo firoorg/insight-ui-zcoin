@@ -37,7 +37,8 @@
   </div>
   <div data-ng-if="block.hash">
     <div class="well well-sm ellipsis">
-      <strong>BlockHash</strong> 
+      <strong data-ng-if="block.chainlock">&#x1F512; </strong>
+      <strong>BlockHash</strong>
       <span class="txid text-muted">{{block.hash}}</span>
       <span class="btn-copy" clip-copy="block.hash"></span>
     </div>
