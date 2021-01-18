@@ -26,8 +26,16 @@ angular.module('insight.lelantusstatus')
         $scope.data[0].push(values.mints[i].tot);
         $scope.data[1].push(values.jsplits[i].tot);
       }
+
+      $scope.options = {
+        scales : {
+          yAxes : [ {
+            type: 'logarithmic'
+          } ]
+        }
+      };
       $scope.items.stats = stats;
-        // $scope.labels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+      // $scope.labels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
         // $scope.series = ['Mints', 'Splits'];
         // $scope.data = [
         //   [65, 59, 80, 81, 56, 55, 40],
