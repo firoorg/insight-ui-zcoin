@@ -142,7 +142,7 @@ msgstr "Schwierigkeit"
 
 #: public/views/transaction/tx.html
 msgid "Double spent attempt detected. From tx:"
-msgstr "Es wurde ein \"double Spend\" Versuch erkannt.Von tx:"
+msgstr "Es wurde ein \"double Spend\" Versuch erkannt. Von tx:"
 
 #: public/views/includes/connection.html
 msgid "Error!"
