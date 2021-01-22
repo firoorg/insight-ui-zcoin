@@ -33,9 +33,9 @@ msgstr ""
 "\"_blank\">Open Source Firo Blockchain Explorer</a> mit vollständigen "
 "REST und Websocket APIs um eigene Wallets oder Applikationen zu "
 "implementieren. Hierbei werden fortschrittlichere Abfragen der Blockchain "
-"ermöglicht, bei denen die RPC des zcoind nicht mehr ausreichen. Der "
-"aktuelle <a href=\"https://github.com/zcoinofficial/insight-ui-zcoin\" target=\"_blank"
-"\">Quellcode</a> ist auf Github zu finden."
+"ermöglicht, bei denen die RPC des firod nicht mehr ausreichen. Der "
+"aktuelle <a href=\"https://github.com/firoorg/insight-ui-zcoin\" target=\"_blank"
+"\">Quellcode</a> ist auf GitHub zu finden."
 
 #: public/views/index.html
 msgid ""
@@ -45,8 +45,8 @@ msgid ""
 msgstr ""
 "<strong>insight</strong> befindet sich aktuell noch in der Entwicklung. "
 "Bitte sende alle gefundenen Fehler (Bugs) und Feedback zur weiteren "
-"Verbesserung an unseren <a href=\"https://github.com/zcoinofficial/insight-ui-zcoin/issues"
-"\" target=\"_blank\">Github Issue Tracker</a>."
+"Verbesserung an unseren <a href=\"https://github.com/firoorg/insight-ui-zcoin/issues"
+"\" target=\"_blank\">GitHub Issue Tracker</a>."
 
 #: public/views/index.html
 msgid "About"
@@ -94,8 +94,8 @@ msgid ""
 "Can't connect to zcoind to get live updates from the p2p network. (Tried "
 "connecting to zcoind at {{host}}:{{port}} and failed.)"
 msgstr ""
-"Es ist nicht möglich mit zcoind zu verbinden um live Aktualisierungen vom "
-"P2P Netzwerk zu erhalten. (Verbindungsversuch zu zcoind an {{host}}:"
+"Es ist nicht möglich mit firod zu verbinden um live Aktualisierungen vom "
+"P2P Netzwerk zu erhalten. (Verbindungsversuch zu firod an {{host}}:"
 "{{port}} ist fehlgeschlagen.)"
 
 #: public/views/includes/connection.html
@@ -200,7 +200,7 @@ msgstr "Letzter Block"
 
 #: public/views/status.html
 msgid "Last Block Hash (zcoind)"
-msgstr "Letzter Hash (zcoind)"
+msgstr "Letzter Hash (firod)"
 
 #: public/views/index.html
 msgid "Latest Blocks"
