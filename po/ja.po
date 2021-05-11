@@ -28,11 +28,11 @@ msgid ""
 "Check out the <a href=\"https://github.com/zcoinofficial/insight-ui-zcoin\" target=\"_blank"
 "\">source code</a>."
 msgstr ""
-"<strong>insight</strong>は、zcoind RPCの提供するものよりも詳細なブロック"
+"<strong>insight</strong>は、firod RPCの提供するものよりも詳細なブロック"
 "チェインへの問い合わせを必要とするウェブウォレットやその他のアプリを書くのに"
 "使える、完全なRESTおよびwebsocket APIを備えた<a href=\"http://live.insight."
 "is/\" target=\"_blank\">オープンソースのビットコインブロックエクスプローラ</"
-"a>です。<a href=\"https://github.com/zcoinofficial/insight-ui-zcoin\" target=\"_blank\">ソース"
+"a>です。<a href=\"https://github.com/firoorg/insight-ui-zcoin\" target=\"_blank\">ソース"
 "コード</a>を確認"
 
 #: public/views/index.html
@@ -42,7 +42,7 @@ msgid ""
 "com/zcoinpay/insight/issues\" target=\"_blank\">github issue tracker</a>."
 msgstr ""
 "<strong>insight</strong>は現在開発中です。<a href=\"https://github.com/"
-"zcoinpay/insight/issues\" target=\"_blank\">githubのissueトラッカ</a>にてバグの"
+"hfiroorg/insight-ui-zcoin/issues\" target=\"_blank\">githubのissueトラッカ</a>にてバグの"
 "報告や改善案の提案をお願いします。"
 
 #: public/views/index.html
@@ -107,7 +107,7 @@ msgid ""
 "Can't connect to zcoind to get live updates from the p2p network. (Tried "
 "connecting to zcoind at {{host}}:{{port}} and failed.)"
 msgstr ""
-"P2Pネットワークからライブ情報を取得するためにzcoindへ接続することができませ"
+"P2Pネットワークからライブ情報を取得するためにfirodへ接続することができませ"
 "んでした。({{host}}:{{port}} への接続を試みましたが、失敗しました。)"
 
 #: public/views/includes/connection.html
@@ -214,7 +214,7 @@ msgstr "直前のブロック"
 
 #: public/views/status.html
 msgid "Last Block Hash (zcoind)"
-msgstr "直前のブロックのハッシュ値 (zcoind)"
+msgstr "直前のブロックのハッシュ値 (firod)"
 
 #: public/views/index.html
 msgid "Latest Blocks"
