@@ -34,10 +34,10 @@
       <div data-ng-if="!itemsExpanded" data-ng-init="currentInNoExpanded=0; sizeInNoExpanded=5">
         <div class="panel panel-default" data-ng-repeat="vin in tx.vinSimple| startFrom:currentInNoExpanded*sizeInNoExpanded | limitTo:sizeInNoExpanded">
           <div class="panel-body transaction-vin-vout">
-            <div data-ng-show="vin.addr!='Lelantusjsplit'" class="pull-right ZCOIN-value" data-ng-class="{'text-danger': $root.currentAddr == vin.addr}">
+            <div data-ng-show="!vin.addr.startsWith('Lelantusj')" class="pull-right ZCOIN-value" data-ng-class="{'text-danger': $root.currentAddr == vin.addr}">
               {{$root.currency.getConvertion(vin.value) || vin.value + ' FIRO'}}
             </div>
-            <div data-ng-show="vin.addr=='Lelantusjsplit'" class="pull-right ZCOIN-value" data-ng-class="{'text-danger': $root.currentAddr == vin.addr}">
+            <div data-ng-show="vin.addr.startsWith('Lelantusj')" class="pull-right ZCOIN-value" data-ng-class="{'text-danger': $root.currentAddr == vin.addr}">
                 Hidden
             </div>
             <div class="ellipsis">
