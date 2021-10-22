@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('insight.lelantusstatus')
-  .controller('LelantusStatusController', function ($scope, LelantusStatus) {
+angular.module('insight.lelantusstatus').controller('LelantusStatusController',
+  function ($scope, $rootScope, LelantusStatus) {
     $scope.items = {};
 
     LelantusStatus.get({}, function (values) {
@@ -9,13 +9,16 @@ angular.module('insight.lelantusstatus')
       $scope.items.mints = values.mints;
       var stats = {};
       stats.jt = 0;
-      stats.jc=0;
-      stats.mt=0;
+      stats.jc = 0;
+      stats.mt = 0;
       stats.mc = 0;
       $scope.labels = [];
       $scope.series = [];
       $scope.data = [[],[]];
       for (var i = 0; i < values.jsplits.length; i++) {
+        if ($rootScope.appState.totalBlocks > 363092 && i == values.jsplits.length - 2) {
+          values.mints[i].tot = values.mints[i].tot * 1 + 237500; // The estimated amount of coins forged during the Lelantus attacks.
+        }
         stats.jt += values.jsplits[i].tot * 1;
         stats.jc += values.jsplits[i].cnt * 1;
         stats.mt += values.mints[i].tot * 1;
