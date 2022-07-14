@@ -1,10 +1,10 @@
 # Insight UI Firo
 
-A Firo blockchain explorer web application service for [Bitcore Node Firo](https://github.com/zcoinofficial/bitcore-node-zcoin) using [Insight API Firo](https://github.com/zcoinofficial/insight-api-zcoin).
+A Firo blockchain explorer web application service for [Bitcore Node Firo](https://github.com/firoorg/bitcore-node-zcoin) using [Insight API Firo](https://github.com/firoorg/insight-api-zcoin).
 
 ## Getting Started
 
-Please refer to [Bitcore Node Firo](https://github.com/zcoinofficial/bitcore-node-zcoin) for a quick start quide.
+Please refer to [Bitcore Node Firo](https://github.com/firoorg/bitcore-node-zcoin) for a quick start quide.
 
 To manually install all of the necessary components, you can run these commands:
 
@@ -68,11 +68,11 @@ compile***.
 
 ## Note
 
-For more details about the [Insight API](https://github.com/zcoinpay/insight-api-zcoin) configuration and end-points, go to [Insight API GitHub repository](https://github.com/zcoinpay/insight-api-zcoin).
+For more details about the [Insight API](https://github.com/firoorg/insight-api-zcoin) configuration and end-points, go to [Insight API GitHub repository](https://github.com/firoorg/insight-api-zcoin).
 
 ## Contribute
 
-Contributions and suggestions are welcomed at the [Insight UI Firo GitHub repository](https://github.com/zcoinofficial/insight-ui-zcoin).
+Contributions and suggestions are welcomed at the [Insight UI Firo GitHub repository](https://github.com/firoorg/insight-ui-zcoin).
 
 
 ## License
