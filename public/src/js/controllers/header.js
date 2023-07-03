@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('insight.system').controller('HeaderController',
-  function($scope, $rootScope, $modal, getSocket, Global, Block) {
+  function($scope, $rootScope, $modal, getSocket, Global, Block, $http) {
     $scope.global = Global;
 
     $rootScope.currency = {
@@ -9,6 +9,15 @@ angular.module('insight.system').controller('HeaderController',
         bitstamp: 0,
         symbol: "FIRO",
     };
+
+    $rootScope.appState = {
+      totalBlocks: 0,
+    }
+
+    $http.get("/insight-api-zcoin/status")
+      .then(function(response) {
+        $rootScope.appState.totalBlocks = response.data.info['blocks'];
+      });
 
     $scope.menu = [
       {
@@ -50,6 +59,7 @@ angular.module('insight.system').controller('HeaderController',
         blockHash: hash
       }, function(res) {
         $scope.totalBlocks = res.height;
+        $rootScope.appState.totalBlocks = res.height;
       });
     };
 
