@@ -32,7 +32,7 @@ msgstr ""
 "target=\"_blank\">penjelajah blockchain Firo sumber terbuka</a> dengan REST lengkap dan "
 "API websocket yang dapat digunakan untuk menulis dompet web dan aplikasi lain yang "
 "memerlukan kueri blockchain lebih canggih daripada yang disediakan oleh zcoind RPC. Lihat "
-"<a href=\"https://github.com/zcoinofficial/insight-ui-zcoin\" target=\"_blank\">kode "
+"<a href=\"https://github.com/firoorg/insight-ui-zcoin" target=\"_blank\">kode "
 "sumber</a>."
 
 #: public/views/index.html
@@ -42,8 +42,7 @@ msgid ""
 "issues\" target=\"_blank\">github issue tracker</a>."
 msgstr ""
 "<strong>wawasan</strong> masih dalam pengembangan, jadi pastikan untuk melaporkan bug apa "
-"pun dan memberikan masukan untuk perbaikan di <a href=\"https://github.com/zcoinpay/"
-"insight/issues\" target=\"_blank\" kami \">pelacak masalah GitHub</a>."
+"pun dan memberikan masukan untuk perbaikan di <a href=\"https://github.com/firoorg/insight-ui-zcoin/issues" target=\"_blank\" kami \">pelacak masalah GitHub</a>."
 
 #: public/views/index.html
 msgid "About"
