@@ -5,6 +5,7 @@
             <span data-ng-if="tx.proUpServ">Provider Update Service</span>
             <span data-ng-if="tx.proUpReg">Provider Update Registrar</span>
             <span data-ng-if="tx.proUpRev">Provider Revoke</span>
+            <span data-ng-if="tx.sparkData">Spark Name</span>
             <span data-ng-if="tx.cbTx">Coinbase</span>
             <span data-ng-if="tx.finalCommitment">Final Commitment</span>
             <span data-ng-if="tx.sporkTx">Spork Control</span>
@@ -200,3 +201,27 @@
     </tbody>
 </table>
 </div>
+<table style="..." class="table" data-ng-show="extraPayloadExpanded && tx.sparkData">
+    <tbody>
+      <tr>
+        <td class="text-muted">Name</td>
+        <td class="text-muted ellipsis">{{tx.sparkData.name}}</td>
+      </tr>
+      <tr>
+        <td class="text-muted">Address</td>
+        <td class="text-muted ellipsis">
+          <a href="address/{{tx.sparkData.address}}" title="{{tx.sparkData.address}}">
+            {{tx.sparkData.address.substring(0, 64)}}...
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="text-muted">Valid until block</td>
+        <td class="text-muted ellipsis">{{tx.sparkData.validityBlocks}}</td>
+      </tr>
+      <tr data-ng-if="tx.sparkData.additionalInfo">
+        <td class="text-muted">Additional Info</td>
+        <td class="text-muted ellipsis">{{tx.sparkData.additionalInfo}}</td>
+      </tr>
+    </tbody>
+  </table>
