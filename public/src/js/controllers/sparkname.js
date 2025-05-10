@@ -12,6 +12,18 @@ angular.module('insight.sparknames')
                .replace(/\//g, "&#47;");
   }
 
+  $scope.customFilter = function(item) {
+    if (!$scope.searchName) return true;
+
+    const query = $scope.searchName.toLowerCase();
+    return (
+      (item.name && item.name.toLowerCase().includes(query)) ||
+      (item.address && item.address.toLowerCase().includes(query)) ||
+      (item.validUntil && item.validUntil.toString().includes(query)) ||
+      (item.additionalInfo && item.additionalInfo.toLowerCase().includes(query))
+    );
+  };
+
   $http.get('/insight-api-zcoin/sparknames')
     .then(function(response) {
       var names = response.data;

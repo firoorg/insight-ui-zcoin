@@ -6,7 +6,7 @@
     <div class="form-group">
       <input type="text"
              class="form-control"
-             placeholder="Search by name"
+             placeholder="Search"
              ng-model="searchName"
              style="max-width: 300px; margin-bottom: 15px;">
     </div>
@@ -21,7 +21,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr data-ng-repeat="item in items | filter:{name: searchName}">
+        <tr data-ng-repeat="item in items | filter:customFilter">
           <td>{{$index + 1}}</td>
           <td>{{item.name}}</td>
           <td>
