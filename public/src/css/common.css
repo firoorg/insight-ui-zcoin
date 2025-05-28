@@ -4893,7 +4893,7 @@ li:nth-child(2) a.ng-binding:before {
     margin: -6px 4px -6px 4px;
 }
 
-.dropdown-menu.more-menu>li:nth-child(2) a.ng-binding:before {
+.dropdown-menu.more-menu a.ng-binding[href$="status"]:before {
     content: "";
     background: url(../img/status_icon_nav.svg) no-repeat;
     display: inline-block;
@@ -4902,7 +4902,7 @@ li:nth-child(2) a.ng-binding:before {
     margin: -6px 4px -6px 4px;
 }
 
-.dropdown-menu.more-menu>li:nth-child(3) a.ng-binding:before {
+.dropdown-menu.more-menu a.ng-binding[href$="lelantusstatus"]:before {
     content: "";
     background: url(../img/sigma_icon_nav.svg) no-repeat;
     display: inline-block;
@@ -4911,9 +4911,18 @@ li:nth-child(2) a.ng-binding:before {
     margin: -6px 4px -6px 4px;
 }
 
-.dropdown-menu.more-menu>li:nth-child(4) a.ng-binding:before {
+.dropdown-menu.more-menu a.ng-binding[href$="faucet"]:before {
     content: "";
     background: url(../img/faucet_icon_nav.svg) no-repeat;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -6px 4px -6px 4px;
+}
+
+.dropdown-menu.more-menu a.ng-binding[href$="sparknames"]:before {
+    content: "";
+    background: url(../img/spark_names.svg) no-repeat;
     display: inline-block;
     width: 24px;
     height: 24px;

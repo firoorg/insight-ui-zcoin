@@ -38,6 +38,10 @@ angular.module('insight.system').controller('HeaderController',
           {
             'title': 'Lelantus',
             'link': 'lelantusstatus'
+          },
+          {
+            'title': 'Spark Names',
+            'link': 'sparknames'
           }
         ]
       }

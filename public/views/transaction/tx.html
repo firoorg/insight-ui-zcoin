@@ -136,7 +136,7 @@
         <div data-ng-repeat="vout in tx.voutSimple| startFrom:currentOutNoExpanded*sizeOutNoExpanded | limitTo:sizeOutNoExpanded">
           <div class="transaction-vin-vout panel panel-default">
             <div class="panel-body">
-              <div data-ng-show="vout.addr!='Lelantusjmint' && vout.addr!='Sparksmint'" class="pull-right ZCOIN-value" data-ng-class="{'text-success': $root.currentAddr == vout.addr}">
+              <div data-ng-show="vout.addr!='Lelantusjmint' && vout.addr!='Sparksmint' && vout.addr!='Sparkname'" class="pull-right ZCOIN-value" data-ng-class="{'text-success': $root.currentAddr == vout.addr}">
                 {{$root.currency.getConvertion(vout.value) || vout.value + ' FIRO' }}
                 <span class="text-danger" data-ng-show="vout.isSpent" tooltip="Output is spent" tooltip-placement="left">(S)</span>
                 <span class="text-success" data-ng-show="!vout.isSpent"  tooltip="Output is unspent" tooltip-placement="left">(U)</span>
@@ -165,7 +165,7 @@
         <div data-ng-repeat="vout in tx.vout| startFrom:currentOutExpanded*sizeOutExpanded | limitTo:sizeOutExpanded" data-ng-if="fromVoutCollapsed ? v_index == vout.n : 1">
           <div class="panel panel-default transaction-vin-vout">
             <div class="panel-body">
-              <div data-ng-show="vout.scriptPubKey.type!='lelantusjmint' && vout.scriptPubKey.type!='sparksmint'" class="pull-right ZCOIN-value">
+              <div data-ng-show="vout.scriptPubKey.type!='lelantusjmint' && vout.scriptPubKey.type!='sparksmint' && vout.scriptPubKey.type!='sparkname'" class="pull-right ZCOIN-value">
                 <span>{{$root.currency.getConvertion(vout.value) || vout.value + ' FIRO' + vout}}
                   <span class="text-success" data-ng-show="!vout.spentTxId" tooltip="Output is unspent" tooltip-placement="left">(U)</span>
                   <a class="glyphicon glyphicon-chevron-right" data-ng-show="vout.spentTxId" href="tx/{{vout.spentTxId}}/</{{vout.spentIndex}}" title="Spent at: {{vout.spentTxId}},{{vout.spentIndex}}"></a>
