@@ -21,7 +21,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr data-ng-repeat="item in items | filter:customFilter">
+        <tr data-ng-repeat="item in items | filter:customFilter | orderBy:caseInsensitiveName">
           <td>{{$index + 1}}</td>
           <td>{{item.name}}</td>
           <td>

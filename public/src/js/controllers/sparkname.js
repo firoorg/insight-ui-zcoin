@@ -24,6 +24,10 @@ angular.module('insight.sparknames')
     );
   };
 
+  $scope.caseInsensitiveName = function(item) {
+    return (item.name || '').toLowerCase();
+  };
+
   $http.get('/insight-api-zcoin/sparknames')
     .then(function(response) {
       var names = response.data;
