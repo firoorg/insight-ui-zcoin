@@ -47,6 +47,10 @@ angular.module('insight').config(function($routeProvider) {
       templateUrl: 'views/richlist.html',
       title: 'Rich list'
     }).
+    when('/sparknames', {
+      templateUrl: 'views/sparknames.html',
+      title: 'Spark Names'
+    }).
     when('/sigmastatus', {
       templateUrl: 'views/sigmastatus.html',
       title: 'Sigma status'

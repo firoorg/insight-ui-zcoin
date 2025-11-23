@@ -93,6 +93,7 @@ function($scope, $rootScope, $routeParams, $location, Global, Transaction, Trans
     pageNum += 1;
 
     data.txs.forEach(function(tx) {
+
       _processTX(tx);
       $scope.txs.push(tx);
     });

@@ -1,0 +1,36 @@
+<section>
+  <div class="page-header">
+    <h1>Spark Names</h1>
+  </div>
+  <div class="col-xs-12 col-md-10">
+    <div class="form-group">
+      <input type="text"
+             class="form-control"
+             placeholder="Search"
+             ng-model="searchName"
+             style="max-width: 300px; margin-bottom: 15px;">
+    </div>
+    <table class="table" data-ng-controller="SparkNameController">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Address</th>
+          <th style="white-space: nowrap; width: 150px;">Valid until block</th>
+          <th style="white-space: nowrap; width: 150px;">Additional info</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-ng-repeat="item in items | filter:customFilter">
+          <td>{{$index + 1}}</td>
+          <td>{{item.name}}</td>
+          <td>
+            {{item.address.substring(0, 48)}}...
+          </td>
+          <td>{{item.validUntil}}</td>
+          <td style="padding-left: 20px;">{{item.additionalInfo || '—'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

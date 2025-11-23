@@ -35,14 +35,18 @@ angular.module('insight.system').controller('HeaderController',
             'title': 'Status',
             'link': 'status'
           },
-	  {
+	      {
             'title': 'Lelantus',
             'link': 'lelantusstatus'
           },
-	  {
+          {
             'title': 'Faucet',
             'link': 'faucet'
-	  }
+	      },
+          {
+            'title': 'Spark Names',
+            'link': 'sparknames'
+          }
         ]
       }
     ];
